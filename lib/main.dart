@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:petagram/providers/reminder_provider.dart';
 import 'package:provider/provider.dart';
 import 'app.dart'; // Import the App widget
 import 'providers/pet_profile_provider.dart';
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MedicationProvider()),
         ChangeNotifierProvider(create: (_) => AppointmentProvider()),
         ChangeNotifierProvider(create: (_) => PetDatabaseProvider()),
+        ChangeNotifierProvider(create: (_) => ReminderProvider()),
+
       ],
       child: const App(),
     );

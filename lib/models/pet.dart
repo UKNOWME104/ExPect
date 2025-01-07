@@ -15,7 +15,7 @@ class Pet {
   });
 
   // Factory method to create a Pet from a map (for Firebase or database)
-  factory Pet.fromMap(Map<String, dynamic> map) {
+  factory Pet.fromMap(Map<String, dynamic> map, String id) {
     return Pet(
       id: map['id'] ?? '',
       name: map['name'] ?? '',

@@ -29,7 +29,7 @@ class FirebaseService {
           .get();
 
       return querySnapshot.docs
-          .map((doc) => Pet.fromMap(doc.data(), doc.id))
+          .map((doc) => Pet.fromMap(doc.data(), doc.id)) // Corrected line
           .toList();
     } catch (e) {
       print("Error fetching pet profiles: $e");
