@@ -1,17 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:petagram/providers/reminder_provider.dart';
-import 'package:provider/provider.dart';
-import 'app.dart'; // Import the App widget
-import 'providers/pet_profile_provider.dart';
-import 'providers/meal_plan_provider.dart';
-import 'providers/medication_provider.dart';
-import 'providers/appointment_provider.dart';
-import 'providers/pet_database_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart'; // Import the get package
+import 'package:petagram/data/local/preference.dart';
+import 'package:petagram/presentation/screens/splash/splash_screen.dart';
+
+import 'constants/color_constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Initialize Firebase
+  await Preference.initialize();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -20,17 +18,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => PetProfileProvider()),
-        ChangeNotifierProvider(create: (_) => MealPlanProvider()),
-        ChangeNotifierProvider(create: (_) => MedicationProvider()),
-        ChangeNotifierProvider(create: (_) => AppointmentProvider()),
-        ChangeNotifierProvider(create: (_) => PetDatabaseProvider()),
-        ChangeNotifierProvider(create: (_) => ReminderProvider()),
-
-      ],
-      child: const App(),
+    return GetMaterialApp(
+      title: 'Pets Gallery',
+      theme: ThemeData(
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: ColorConstants.primaryColor),
+        scaffoldBackgroundColor: Colors.white,
+        useMaterial3: true,
+      ),
+      home: const SplashScreen(),
     );
   }
 }

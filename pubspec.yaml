@@ -33,15 +33,46 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  firebase_auth: ^5.3.4
-  cloud_firestore: ^5.6.0
-  firebase_core: ^3.9.0
-  google_sign_in: ^6.2.2
-  provider: ^6.1.2 # State management
-  flutter_local_notifications: ^18.0.1 # Local notifications
-  table_calendar: ^3.0.9 # Calendar widget for vet appointments
-  intl: ^0.18.0 # Date formatting
+  get: ^4.6.5
+
+  # Location
+  location: ^5.0.3
+  geocoder_buddy:
+    path: ./packages/geocoder_buddy
+
+  # Networks
+  connectivity_plus: ^4.0.2
+
+  # url launcher
+  url_launcher: ^6.1.14
+
+  # Image
+  image_picker: ^1.0.4
+  cached_network_image: ^3.2.3
+
+  # Local Storage
+  shared_preferences: ^2.2.1
+
+  # toast
+  fluttertoast: ^8.2.2
+
+  # logger
+  logger: ^2.0.2
+
+  # Firebase dependencies
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.9.0
+  firebase_storage: ^11.2.6
+  cloud_firestore: ^4.9.1
+
+  # fonts
+  google_fonts: ^4.0.4
+
+  # onboarding
+  onboarding_intro_screen: ^0.0.8
+
+  # Icons
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +92,6 @@ dev_dependencies:
 flutter:
 
   assets:
-    - assets/pets.json
     - assets/images/
 
   # The following line ensures that the Material Icons font is
