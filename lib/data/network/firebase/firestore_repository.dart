@@ -11,7 +11,6 @@ class FirestoreRepository {
   Future<Result<AppUser>> saveUser(AppUser? userDetails) async {
     try {
       if (userDetails?.id != null) {
-        // Update existing user
         await _firestore
             .collection(FirebaseConstants.usersCollection)
             .doc(userDetails?.id)
@@ -19,11 +18,11 @@ class FirestoreRepository {
         LoggerService.i('User updated successfully');
         return Result(data: userDetails);
       } else {
-        // Create a new user
-        final docRef = _firestore.collection(FirebaseConstants.usersCollection).doc();
-        userDetails = userDetails?.copyWith(id: docRef.id);
-        await docRef.set(userDetails?.toJson() ?? {});
+        final doc = await _firestore
+            .collection(FirebaseConstants.usersCollection)
+            .add(userDetails?.toJson() ?? {});
         LoggerService.i('User created successfully');
+        userDetails?.id = doc.id;
         return Result(data: userDetails);
       }
     } on FirebaseException catch (e) {
@@ -37,20 +36,15 @@ class FirestoreRepository {
 
   Future<Result<AppUser>> getUserDetailsByEmail(String email) async {
     try {
-      final querySnapshot = await _firestore
+      final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore
           .collection(FirebaseConstants.usersCollection)
           .where('email', isEqualTo: email)
           .get();
 
-      // Ensure we have at least one document
-      if (querySnapshot.docs.isNotEmpty) {
-        final doc = querySnapshot.docs.first;
-        final data = doc.data();
-
-        // Safely deserialize and include the Firestore document ID
-        final user = AppUser.fromJson(data).copyWith(id: doc.id);
-
-        return Result(data: user);
+      if (snapshot.docs.isNotEmpty) {
+        final data = snapshot.docs.first; // Fetch the first document
+        return Result(
+            data: AppUser.fromJson(data.data()).copyWith(id: data.id));
       } else {
         return Result(error: "User not found");
       }
@@ -62,7 +56,6 @@ class FirestoreRepository {
       return Result(error: e.toString());
     }
   }
-
 
 
   Future<Result<String>> savePet(Pet petData) async {

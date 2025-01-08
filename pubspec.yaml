@@ -44,11 +44,14 @@ dependencies:
   connectivity_plus: ^4.0.2
 
   # url launcher
-  url_launcher: ^6.1.14
-
+  mockito: ^5.4.0
+  build_runner: ^2.4.5
   # Image
+
+  url_launcher: ^6.1.14
   image_picker: ^1.0.4
   cached_network_image: ^3.2.3
+  mocktail: ^1.0.4
 
   # Local Storage
   shared_preferences: ^2.2.1
@@ -64,6 +67,7 @@ dependencies:
   firebase_auth: ^4.9.0
   firebase_storage: ^11.2.6
   cloud_firestore: ^4.9.1
+
 
   # fonts
   google_fonts: ^4.0.4

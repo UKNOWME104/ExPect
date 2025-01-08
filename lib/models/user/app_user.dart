@@ -20,7 +20,7 @@ class AppUser {
       id: json['id'] as String?,
       fullName: json['fullName'] as String,
       address:
-          json['address'] == null ? null : AppAddress.fromJson(json['address']),
+      json['address'] == null ? null : AppAddress.fromJson(json['address']),
       phone: json['phone'] as String,
       email: json['email'] as String,
     );
