@@ -1,12 +1,12 @@
 import 'dart:math';
 
 import 'package:expense_repository/expense_repository.dart';
-import 'package:expenses_tracker/screens/add_expense/blocs/create_categorybloc/create_category_bloc.dart';
-import 'package:expenses_tracker/screens/add_expense/blocs/get_categories_bloc/get_categories_bloc.dart';
-import 'package:expenses_tracker/screens/add_expense/views/add_expense.dart';
-import 'package:expenses_tracker/screens/home/blocs/get_expenses_bloc/get_expenses_bloc.dart';
-import 'package:expenses_tracker/screens/home/views/main_screen.dart';
-import 'package:expenses_tracker/screens/stats/stats.dart';
+import 'package:petagram/screens/add_expense/blocs/create_categorybloc/create_category_bloc.dart';
+import 'package:petagram/screens/add_expense/blocs/get_categories_bloc/get_categories_bloc.dart';
+import 'package:petagram/screens/add_expense/views/add_expense.dart';
+import 'package:petagram/screens/home/blocs/get_expenses_bloc/get_expenses_bloc.dart';
+import 'package:petagram/screens/home/views/main_screen.dart';
+import 'package:petagram/screens/stats/stats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
