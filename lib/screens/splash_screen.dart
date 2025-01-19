@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Center(
             child: Text(
-              'Expense Tracker',
+              'ExPect',
               style: TextStyle(
                 letterSpacing: .6,
                 color: Theme.of(context).colorScheme.primary,

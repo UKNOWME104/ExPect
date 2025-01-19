@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_flutter/auth/AuthService.dart';
+import 'package:petagram/screens/auth/AuthService.dart';
 
 class LoginScreen extends StatefulWidget {
   final void Function(String email, String password) login;

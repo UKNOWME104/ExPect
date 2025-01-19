@@ -231,7 +231,7 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Transiction row
+            // Transaction row
             const SizedBox(
               height: 40,
             ),
