@@ -1,4 +1,4 @@
-library expense_repository;
+library expense_reposityory;
 
 export 'src/entities/entities.dart';
 export 'src/models/models.dart';

@@ -1,4 +1,4 @@
-import '../entities/entities.dart';
+import '../entities/category_entity.dart';
 
 class Category {
   String categoryId;
@@ -16,11 +16,11 @@ class Category {
   });
 
   static final empty = Category(
-    categoryId: '', 
-    name: '', 
-    totalExpenses: 0, 
-    icon: '', 
-    color: 0
+    categoryId: '',
+    name: '',
+    totalExpenses: 0,
+    icon: '',
+    color: 0,
   );
 
   CategoryEntity toEntity() {

@@ -9,9 +9,7 @@ sealed class CreateCategoryEvent extends Equatable {
 
 class CreateCategory extends CreateCategoryEvent {
   final Category category;
-
   const CreateCategory(this.category);
-
   @override
   List<Object> get props => [category];
 }

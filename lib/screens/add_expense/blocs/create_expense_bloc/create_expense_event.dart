@@ -7,7 +7,7 @@ sealed class CreateExpenseEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class CreateExpense extends CreateExpenseEvent{
+class CreateExpense extends CreateExpenseEvent {
   final Expense expense;
 
   const CreateExpense(this.expense);

@@ -7,7 +7,6 @@ part 'get_expenses_state.dart';
 
 class GetExpensesBloc extends Bloc<GetExpensesEvent, GetExpensesState> {
   ExpenseRepository expenseRepository;
-
   GetExpensesBloc(this.expenseRepository) : super(GetExpensesInitial()) {
     on<GetExpenses>((event, emit) async {
       emit(GetExpensesLoading());
