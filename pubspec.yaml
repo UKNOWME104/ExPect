@@ -35,48 +35,22 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   get: ^4.6.5
 
-  # Location
-  location: ^5.0.3
-  geocoder_buddy:
-    path: ./packages/geocoder_buddy
+  cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.6.0
+  fl_chart: ^0.66.0
+  intl: ^0.19.0
+  flutter_colorpicker: ^1.0.3
+  uuid: ^4.3.3
 
-  # Networks
-  connectivity_plus: ^4.0.2
+  firebase_core: ^2.16.0
 
-  # url launcher
-  mockito: ^5.4.0
-  build_runner: ^2.4.5
-  # Image
+  bloc: ^8.1.2
+  flutter_bloc: ^8.1.3
+  equatable: ^2.0.5
 
-  url_launcher: ^6.1.14
-  image_picker: ^1.0.4
-  cached_network_image: ^3.2.3
-  mocktail: ^1.0.4
-
-  # Local Storage
-  shared_preferences: ^2.2.1
-
-  # toast
-  fluttertoast: ^8.2.2
-
-  # logger
-  logger: ^2.0.2
-
-  # Firebase dependencies
-  firebase_core: ^2.15.1
-  firebase_auth: ^4.9.0
-  firebase_storage: ^11.2.6
-  cloud_firestore: ^4.9.1
-
-
-  # fonts
-  google_fonts: ^4.0.4
-
-  # onboarding
-  onboarding_intro_screen: ^0.0.8
-
+  expense_repository:
+    path: packages/expense_repository
   # Icons
-  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -96,7 +70,7 @@ dev_dependencies:
 flutter:
 
   assets:
-    - assets/images/
+    - assets/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

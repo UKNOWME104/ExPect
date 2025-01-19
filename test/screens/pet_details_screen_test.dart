@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:get/get.dart';
@@ -7,9 +7,7 @@ import 'package:petagram/models/pet/pet.dart';
 import 'package:petagram/models/address/address.dart';
 import 'package:mockito/annotations.dart';
 import 'package:petagram/presentation/screens/pets/pet_details/pet_details_controller.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
-import 'add_pet_screen_test.dart';
 
 @GenerateMocks([PetDetailsController])
 void main() {
