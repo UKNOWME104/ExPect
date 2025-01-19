@@ -108,7 +108,7 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Total Balacnce",
+                    "Total Balance",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

@@ -8,7 +8,7 @@ class MyAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Expense Teacker",
+      title: "ExPect",
       theme: ThemeData(
         colorScheme: ColorScheme.light(
           surface: Colors.grey.shade100,
