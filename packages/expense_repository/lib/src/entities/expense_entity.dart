@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../models/models.dart';
 import 'category_entity.dart';
@@ -22,6 +23,7 @@ class ExpenseEntity {
       'category': category.toEntity().toDocument(),
       'date': date,
       'amount': amount,
+      'user': FirebaseAuth.instance.currentUser?.email,
     };
   }
 

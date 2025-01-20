@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expense_repository/expense_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseExpenseRepo implements ExpenseRepository {
   final categoryColllecion =
@@ -44,10 +45,23 @@ class FirebaseExpenseRepo implements ExpenseRepository {
     }
   }
 
+
+  // Future<List<Expense>> getExpenses() async {
+  //   try {
+  //     return await expenseCollection.get().then((value) => value.docs
+  //         .map((e) => Expense.fromEntity(ExpenseEntity.fromDocument(e.data())))
+  //         .toList());
+  //   } catch (e) {
+  //     log(e.toString());
+  //     rethrow;
+  //   }
   @override
   Future<List<Expense>> getExpenses() async {
     try {
-      return await expenseCollection.get().then((value) => value.docs
+      return await expenseCollection
+          .where('userId', isEqualTo: FirebaseAuth.instance.currentUser?.email) // Filter by user ID
+          .get()
+          .then((value) => value.docs
           .map((e) => Expense.fromEntity(ExpenseEntity.fromDocument(e.data())))
           .toList());
     } catch (e) {
@@ -55,4 +69,5 @@ class FirebaseExpenseRepo implements ExpenseRepository {
       rethrow;
     }
   }
-}
+
+  }

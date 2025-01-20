@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:expense_repository/expense_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
@@ -63,9 +64,10 @@ class MainScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Jonh Doe",
+                          FirebaseAuth.instance.currentUser?.email ?? 'and',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: 15
+                            ,
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).colorScheme.onSurface,
                           ),
