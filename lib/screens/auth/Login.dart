@@ -52,18 +52,45 @@ class LoginScreen extends StatelessWidget {
     var state = context.watch<LoginBloc>().state;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AlarmIt'), // More specific app name
+        title: ShaderMask(
+          shaderCallback: (Rect bounds) {
+            return LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.tertiary,
+                Theme.of(context).colorScheme.secondary,
+                Theme.of(context).colorScheme.primary,
+              ],
+              transform: const GradientRotation(3.14 / 4),
+            ).createShader(bounds);
+          },
+          child: const Text(
+            'ExPect',
+            style: TextStyle(
+              color: Colors.white,  // Keep text color white for proper visibility
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+       // More specific app name
         centerTitle: true,
-        backgroundColor: Colors.black, // Add a color
+        backgroundColor: Colors.grey[100], // Add a color
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[100],
       body: Container(
 
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.grey.shade800,
           border: Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(50),
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).colorScheme.tertiary,
+              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.primary,
+            ],
+            transform: const GradientRotation(3.14 / 4),
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.grey,
@@ -83,20 +110,40 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch, // Stretch buttons
                 children: [
                   const SizedBox(height: 40), // Add some top padding
-                  // Image.asset(
-                  //   // Add an app logo or image
-                  //   'assets/alarm_it_logo.png', // Replace with your image path
-                  //   height: 150,
-                  //   width: 150,
-                  // ),
-                  Icon(Icons.alarm, size: 150,),
+                  Image.asset(
+                    // Add an app logo or image
+                    'assets/logo.png', // Replace with your image path
+                    height: 150,
+                    width: 150,
+                  ),
+
                   const SizedBox(height: 20),
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Email',
+                      labelStyle: TextStyle(
+                        color: Colors.white,  // Change label text color to white
+                      ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.circular(10.0), // Rounded corners
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Optional: Change border color
+                          width: 2.0,           // Make border outline thicker
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Border color for enabled state
+                          width: 2.0,           // Thicker border
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Border color when focused
+                          width: 3.0,           // Even thicker border when focused
+                        ),
                       ),
                     ),
                     keyboardType: TextInputType.emailAddress,
@@ -114,10 +161,32 @@ class LoginScreen extends StatelessWidget {
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Password',
+                      labelStyle: TextStyle(
+                        color: Colors.white,  // Change label text color to white
+                      ),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Optional: Change border color
+                          width: 2.0,           // Make border outline thicker
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Border color for enabled state
+                          width: 2.0,           // Thicker border
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide(
+                          color: Colors.white,  // Border color when focused
+                          width: 3.0,           // Even thicker border when focused
+                        ),
                       ),
                     ),
+
                     obscureText: true,
                     validator: (value) {
                       if (value!.isEmpty || value.length < 6) {
@@ -141,7 +210,7 @@ class LoginScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize:
                       const Size(double.infinity, 50), // Stretch button
-                      backgroundColor: Colors.grey.shade700, // Add a color
+                      backgroundColor: Colors.pinkAccent, // Add a color
                     ),
                   ),
                   //const SizedBox(height: 10),
@@ -200,7 +269,7 @@ class LoginScreen extends StatelessWidget {
                       minimumSize: const Size(50, 50),
                       maximumSize: const Size(75, 75),
                       backgroundColor:
-                      Colors.white, // White background for Google
+                      Colors.blueGrey, // White background for Google
                     ),
                   ),
                 ],
