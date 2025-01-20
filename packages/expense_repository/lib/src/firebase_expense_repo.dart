@@ -59,7 +59,7 @@ class FirebaseExpenseRepo implements ExpenseRepository {
   Future<List<Expense>> getExpenses() async {
     try {
       return await expenseCollection
-          .where('userId', isEqualTo: FirebaseAuth.instance.currentUser?.email) // Filter by user ID
+          .where('user', isEqualTo: FirebaseAuth.instance.currentUser?.email) // Filter by user ID
           .get()
           .then((value) => value.docs
           .map((e) => Expense.fromEntity(ExpenseEntity.fromDocument(e.data())))
