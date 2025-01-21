@@ -1,6 +1,6 @@
 part of 'get_expenses_bloc.dart';
 
-sealed class GetExpensesState extends Equatable {
+class GetExpensesState extends Equatable {
   const GetExpensesState();
 
   @override

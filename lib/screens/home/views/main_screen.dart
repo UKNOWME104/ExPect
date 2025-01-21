@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
   const MainScreen(this.expenses, {super.key});
 
   // to show total expenses balance
-  double _calculateTotalExpenses(List<Expense> expenses) {
+  double calculateTotalExpenses(List<Expense> expenses) {
     double total = 0;
     for (var expense in expenses) {
       total += expense.amount;
@@ -21,7 +21,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalExpenses = _calculateTotalExpenses(expenses);
+    final totalExpenses = calculateTotalExpenses(expenses);
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
